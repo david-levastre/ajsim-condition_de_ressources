@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <title>Simulateur de condition de ressource</title>
+        <!---->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="language" content="" />
+        <meta name="author" content="" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="subject" content="" />
+        <meta name="date" content="modified 22-11-2017" />
+        <!---->
+        <!-- <link rel="canonical" href="" /> -->
+        <!--<link rel="preload" href="assets/styles/css/styles.min.css" as="style" />-->
+        <link rel="stylesheet" type="text/css" href="assets/styles/css/styles.min.css" media="all" />
+        <!---->
+        <link rel="manifest" href="manifest.json" />
+        <meta name="theme-color" content="#" />
+        <meta name="msapplication-config" content="icons/browserconfig.xml" />
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="mobile-web-app-capable" content="True" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-touch-fullscreen" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="#" />
+        <meta name="apple-mobile-web-app-title" content="" />
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/android-chrome-192x192.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png" />
+        <link rel="mask-icon" href="assets/icons/safari-pinned-tab.svg" color="#" />
+        <link rel="shortcut icon" href="assets/icons/favicon.ico" />
+    </head>
+    <body>
+        <noscript>
+        </noscript>
+        <!--[if lt IE 11]>
+            <p></p>
+        <![endif]-->
+        <section class="section">
+          <div class="form container">
+            <h1 class="title">Aide juridictionnelle</h1>
+            <h2 class="subtitle">Simulateur de condition de ressources</h2>
+            <div class="field">
+              <label class="label">Les ressources de votre foyer</label>
+              <div class="control">
+                <input class="input" type="number" placeholder="€" id="input_ressourcesfoyer">
+              </div>
+              <p class="help">Le revenu à prendre en considération pour ce champ est la moyenne mensuelle des revenus de votre foyer pour la dernière année civile. Pour déterminer ce montant reportez-vous à la ligne <em>"Total des salaires et assimilés"</em> ou toute ligne équivalente de votre dernier avis d'imposition.</p>
+            </div>
+            <div class="field">
+              <label class="label">Le montant des pensions alimentaires ou toutes prestations assimilées versées mensuellement à tiers</label>
+              <div class="control">
+                <input class="input" type="number" placeholder="€" id="input_palimentaires">
+              </div>
+              <p class="help">Si ces versements ne sont pas mensuels, veuillez rapporter le total versé à un montant mensuel.</p>
+            </div>
+            <div class="field">
+              <label class="label">Nombre de personnes à charge autre que vos enfants</label>
+              <div class="control">
+                <input class="input" type="number" id="input_autrespersacharge">
+              </div>
+              <p class="help">Peut être comptabilisé votre partenaire ou des ascendants à votre charge.</p>
+            </div>
+            <div class="field">
+              <label class="label">Enfants à charge</label>
+              <div class="control">
+                <input class="input" type="number" id="input_enfantsacharge">
+              </div>
+              <p class="help">Peut être comptabilisé tout enfant à votre charge même si vous n'en avez pas la garde exclusive.</p>
+            </div>
+            <div class="field">
+              <label class="label">Êtes-vous en instance de divorce ou en situation de garde partagée ?</label>
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" name="question" id="input_oui">
+                  Oui
+                </label>
+                <label class="radio">
+                  <input type="radio" name="question" id='input_non'>
+                  Non
+                </label>
+              </div>
+            </div>
+            <div class="field is-grouped">
+              <div class="control">
+                <button class="button is-info" id="simulate_btn">Simuler</button>
+              </div>
+              <div class="control">
+                <button class="button is-text" id="input_annuler">Annuler</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section">
+          <h2 class="subtitle">Résultat</h2>
+          <p id="result"></p>
+          <progress class="progress is-info is-large" value="0" max="100"></progress>
+        </section>
+        <script src="assets/scripts/js/script.min.js"></script>
+    </body>
+</html>
